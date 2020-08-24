@@ -8,7 +8,8 @@ class LinearCongruential(AbstractPRNG):
     c = 12345
 
     def generate(self) -> int:
-        self.x = (LinearCongruential.a * self.x + LinearCongruential.c) % LinearCongruential.m
+        self.x = ((LinearCongruential.a * self.x +
+                LinearCongruential.c) % LinearCongruential.m)
         return self.x
 
 # More algorithms to be implemented in the future...
