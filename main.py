@@ -4,14 +4,14 @@ import abstractprng
 import generators
 
 def welcome() -> None:
-    print("Welcome this pseudorandom number generator!\n")
+    print("Welcome this pseudorandom number generator, or PRNG for short!\n")
 
     print("Enter n to generate a number.")
-    print("Enter n followed by two integers to generate a number within a"
+    print("Enter n followed by two integers to generate a number within a "
         "specified range. Example: n -1 10 specifies a range of [-1, 10)\n")
 
     print("Enter s to display the current seed of your PRNG.")
-    print("Enter s followed by an integer to set the seed for your PRNG."
+    print("Enter s followed by an integer to set the seed for your PRNG. "
         "Example: s 11\n")
 
     print("Type exit to exit this program.\n")
