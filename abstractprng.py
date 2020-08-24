@@ -1,6 +1,6 @@
 import time
 
-class AbstractPRNG(metaclass=abc.ABCMeta):
+class AbstractPRNG():
     """An abstract class for pseudorandom number generators."""
 
     def __init__(self):
