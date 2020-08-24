@@ -8,7 +8,7 @@ class AbstractPRNG:
         self.x = self.seed
 
     def generate(self) -> int:
-        """Generates and returns a pseudorandom number."""
+        """Abstract. Generates and returns a pseudorandom number."""
         pass
 
     def generate_in_range(self, low: int, high: int) -> int:
