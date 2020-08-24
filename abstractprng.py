@@ -17,7 +17,7 @@ class AbstractPRNG:
         if low >= high:
             raise ValueError("Invalid range.")
 
-        num = generate()
+        num = self.generate()
         width = high - low
         return (num % width) + low
 

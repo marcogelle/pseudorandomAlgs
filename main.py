@@ -16,8 +16,8 @@ def welcome() -> None:
 
     print("Type exit to exit this program.\n")
 
-def ask_user(prnb: abstractprng.AbstractPRNG) -> None:
-    n_re = re.compile('n( -*\d+){2}')
+def ask_user(prng: abstractprng.AbstractPRNG) -> None:
+    n_re = re.compile('n (-*\d+) (-*\d+)')
     s_re = re.compile('s (-*\d+)')
     while True:
         command = input(">>> Command: ")
@@ -27,13 +27,13 @@ def ask_user(prnb: abstractprng.AbstractPRNG) -> None:
         if command == 'n':
             print(prng.generate())
         elif n_match:
-            low, high = n_match.group(1), n_match.group(2)
-            print(prnb.generate_in_range(low, high))
+            low, high = int(n_match.group(1)), int(n_match.group(2))
+            print(prng.generate_in_range(low, high))
         elif command == 's':
             print(prng.get_seed())
         elif s_match:
-            seed = s_match.group(1)
-            prnb.set_seed(seed)
+            seed = int(s_match.group(1))
+            prng.set_seed(seed)
         elif command == 'exit':
             break
         else:
