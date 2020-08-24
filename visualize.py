@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import generators
 import random
 
-low, high = -30, 30
+low, high = -35, 35
 batch = 25
 num_samples = 1000
 assert num_samples % batch == 0
@@ -13,7 +13,7 @@ nums = [n for n in range(low, high)]
 
 cnts1 = [0] * len(nums)
 ax1.bar(nums, cnts1)
-ax1.title.set_text('Local implementation')
+ax1.title.set_text('Local implementation of LCG')
 
 cnts2 = [0] * len(nums)
 ax2.bar(nums, cnts2)
