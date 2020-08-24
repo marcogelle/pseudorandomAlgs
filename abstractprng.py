@@ -21,6 +21,19 @@ class AbstractPRNG:
         width = high - low
         return (num % width) + low
 
+    def generate_prob(self) -> float:
+        """Abstract. Generates a real number in the range [0.0 1.0), which
+        simulates a uniform, continuous probability distribution."""
+        pass
+
+    def generate_prob_range(self, low: float, high: float) -> float:
+        """Generates a real number within the range [low high)."""
+        if low >= high:
+            raise ValueError("Invalid range.")
+            
+        width = high - low
+        return width * self.generate_prob() + low
+
     def set_seed(self, seed: int) -> None:
         """Sets the seed for this generator."""
         self.seed = seed

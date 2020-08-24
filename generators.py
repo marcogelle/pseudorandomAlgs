@@ -12,4 +12,9 @@ class LinearCongruential(AbstractPRNG):
                 LinearCongruential.c) % LinearCongruential.m)
         return self.x
 
+    def generate_prob(self) -> float:
+        return self.generate() / LinearCongruential.m
+
+# class
+
 # More algorithms to be implemented in the future...
