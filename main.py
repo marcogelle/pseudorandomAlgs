@@ -28,7 +28,10 @@ def ask_user(prng: abstractprng.AbstractPRNG) -> None:
             print(prng.generate())
         elif n_match:
             low, high = int(n_match.group(1)), int(n_match.group(2))
-            print(prng.generate_in_range(low, high))
+            try:
+                print(prng.generate_in_range(low, high))
+            except ValueError as msg:
+                print(msg)
         elif command == 's':
             print(prng.get_seed())
         elif s_match:
