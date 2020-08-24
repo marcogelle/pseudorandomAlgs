@@ -1,3 +1,6 @@
+import re
+
+import abstractprng
 import generators
 
 def welcome() -> None:
@@ -15,21 +18,21 @@ def welcome() -> None:
 
 def ask_user(prnb: abstractprng.AbstractPRNG) -> None:
     while True:
-        command = input("Command: ")
+        command = input(">>> Command: ")
         if command == 'n':
             print(prng.generate())
+        elif re.fullmatch('n( -*\d+){2}', command):
+            print('cool beans yo')
         elif command == 's':
             print(prng.get_seed())
+        elif re.fullmatch('s (-*\d+)', command):
+            print('cool beans')
         elif command == 'exit':
             break
         else:
-            try:
-                seed = int(command)
-                prng.set_seed(seed)
-            except ValueError:
-                print('Invalid command')
+            print("Invalid command.")
 
 if __name__ == '__main__':
     welcome()
-    prng = lcg.LinearCongruential()
+    prng = generators.LinearCongruential()
     ask_user(prng)
