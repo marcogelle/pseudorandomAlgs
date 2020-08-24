@@ -10,3 +10,5 @@ class LinearCongruential(AbstractPRNG):
     def generate(self) -> int:
         self.x = (LinearCongruential.a * self.x + LinearCongruential.c) % LinearCongruential.m
         return self.x
+
+# More algorithms to be implemented in the future...
