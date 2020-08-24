@@ -3,13 +3,13 @@ import numpy as np
 import generators
 import random
 
-def bucket(n: float, nums: np.ndarray) -> int:
-    for i in range(nums.size - 1, -1, -1):
-        if nums[i] < n:
-            return i
-    return RuntimeError("Number does not fall into a bucket.")
-
 def visualize_reals() -> None:
+    def bucket(n: float, nums: np.ndarray) -> int:
+        for i in range(nums.size - 1, -1, -1):
+            if nums[i] < n:
+                return i
+        return RuntimeError("Number does not fall into a bucket.")
+        
     low, high = 0, 1
     batch = 35
     num_samples = 1400
