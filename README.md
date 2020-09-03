@@ -1,5 +1,5 @@
 # pseudorandomAlgs
-Just a fun mini project on implementing pseudorandom number generators.
+Just a fun project on implementing pseudorandom number generators.
 Made with Python 3.8.
 
 Run main.py to play around with the generator.
